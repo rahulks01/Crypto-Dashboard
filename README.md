@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+# Cryptocurrency Dashboard
+A responsive and feature-rich cryptocurrency dashboard built using React and the CoinGecko API. This application provides real-time cryptocurrency data, dynamic visualizations, and user-friendly interactions for monitoring and analyzing cryptocurrency trends.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features
+### 1. Homepage
+- Displays a list of cryptocurrencies fetched from the CoinGecko API's /coins/markets endpoint.
+- Key details for each cryptocurrency:
+  <ul>
+    <li>Name</li>
+    <li>Symbol</li>
+    <li>Current price</li>
+    <li>24-hour percentage change (green for positive, red for negative).</li>
+  </ul>
+- Includes:
+  <ul>
+    <li>Search functionality for filtering cryptocurrencies by name.</li>
+    <li>Sorting options (e.g., by price, market cap, or percentage change).</li>
+    <li>Pagination for efficient navigation through large datasets.</li>
+  </ul>
 
-## Available Scripts
+### 2. Favorites Functionality
+- Users can favorite cryptocurrencies by clicking the heart icon on each card.
+- Favorites are saved in localStorage, ensuring persistence across sessions.
+- A dedicated Favorites Page lists all the user's favorite cryptocurrencies.
 
-In the project directory, you can run:
+### 3. Cryptocurrency Details Page
+- Clicking on a cryptocurrency card navigates to a dynamic details page.
+- Detailed information includes:
+  <ul>
+    <li>Name</li>
+    <li>Symbol</li>
+    <li>Market cap</li>
+    <li>Historical price data (7-day and 30-day trends).</li>
+    <li>Historical price data visualized using a line chart powered by Chart.js.</li>
+  </ul>
+  
+### 4. Exchange List
+- Lists cryptocurrency exchanges fetched from the /exchanges endpoint.
+- Each exchange card shows:
+  <ul>
+    <li>Exchange name</li>
+    <li>Trading volume</li>
+    <li>Number of cryptocurrencies traded</li>
+    <li>Number of cryptocurrencies traded</li>
+  </ul>
+- Features search and filtering for easy navigation.
+  
+### 5. Currency Converter
+- Users can select a currency (e.g., USD, EUR, GBP) to view cryptocurrency prices in their preferred format.
+  
+### 6. Light/Dark Mode
+- A toggle switch enables users to switch between light and dark modes.
+- Preferences are saved in localStorage for a personalized experience.
+  
+### 7. State Management
+- Global state management using Recoil:
+  <ul>
+    <li>Handles cryptocurrency data and user favorites efficiently.</li>
+  </ul>
+  
+### 8. Deployment
+- The application is deployed on Vercel for live access.
 
-### `npm start`
+## Installation
+- Prerequisites
+  > Node.js (v14 or higher)
+  
+  > npm (v6 or higher)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Steps
+1. Clone the repository:
+  ```bash
+  git clone https://github.com/yourusername/cryptocurrency-dashboard.git
+  ```  
+  ```
+  cd cryptocurrency-dashboard  
+  ```
+2. Install dependencies:
+  ```bash
+  npm install 
+  ``` 
+3. Start the development server:
+  ```bash
+  npm start 
+  ```
+4. Open your browser and navigate to:
+  ```
+  http://localhost:3000  
+  ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## API Endpoints
+This project uses the [CoinGecko API](https://www.coingecko.com/en/api/documentation). No API key is required.
+  > /coins/markets
+  - Fetches the list of cryptocurrencies with their market data.
+    
+  > /coins/{id}/market_chart
+  - Fetches historical price data for a specific cryptocurrency.
+    
+  > /exchanges
+  - Fetches a list of cryptocurrency exchanges and related data.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Technologies Used
+- Frontend: React, Recoil, Chart.js
+- Styling: Tailwind CSS, ShadCN
+- Data Fetching: CoinGecko API
+- Deployment: Vercel
