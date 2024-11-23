@@ -110,9 +110,8 @@ export default function HomePage() {
             placeholder="Search Crypto Currencies"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full sm:w-20"
+            className="w-full"
           />
-          <Search />
         </div>
         {/* Search bar - End */}
 
