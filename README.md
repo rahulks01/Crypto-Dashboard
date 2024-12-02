@@ -70,7 +70,7 @@ A responsive and feature-rich cryptocurrency dashboard built using React and the
 - Steps
 1. Clone the repository:
   ```bash
-  git clone https://github.com/yourusername/cryptocurrency-dashboard.git
+  git clone https://github.com/rahulks01/Crypto-Dashboard.git
   ```  
   ```
   cd cryptocurrency-dashboard  
